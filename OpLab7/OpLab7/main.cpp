@@ -25,6 +25,42 @@ void enter_string(char * str){
 }
 
 
+void get_characters_count(){
+	int k = 0; //Лічильник унікальних символів в рядку str
+
+	for (int i = 0; i < strlen(str); i++){
+		if (strchr(characters, str[i]) == NULL){ //Якщо символ у рядку унікальних символів characters немає символу str[i]
+			characters = add_element(characters, str[i], length); //Додавання символу до рядку characters
+			numbers = add_element(numbers, 0, length);//Додавання кількості символів в рядку str
+			length++;//Збільшення кількості елементів рядку str
+
+			for (int j = i; j < strlen(str); j++){ //Знаходження кількості символів
+				if (str[i] == str[j])
+				{
+					numbers[k]++;
+				}
+			}
+
+			k++;
+		}
+	}
+}
+
+
+void print_separator(){ //Вивід роздільної лінії
+	cout.fill('-');
+	cout.width(30);
+	cout << "\n";
+}
+
+void print_results(){ //Вивід результатів
+	print_separator();
+	for (int i = 0; i < length; i++){
+		cout << "'" << characters[i] << "'" << ": " << numbers[i] << endl; //Вивід символу і його кількості в str
+	}
+	print_separator();
+}
+
 void main(){
 		
 }

@@ -60,7 +60,11 @@ void print_results(){ //Вивід результатів
 	}
 	print_separator();
 }
+	
 
-void main(){
-		
+void main() {
+enter_string(str);//Ввід строки
+	get_characters_count(); //Знаходження кількості входжень символів строки str
+	print_results();//Вивід результатів
+	system("pause");
 }
